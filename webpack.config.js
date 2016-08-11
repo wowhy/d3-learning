@@ -5,7 +5,8 @@ var path = require('path')
 var webpackConfig = {
   entry: {
     index: './src/index.js',
-    earth: './src/example/earth/index.js'
+    earth: './src/example/earth/index.js',
+    flights: './src/example/flights/index.js'
   },
 
   output: {
@@ -69,6 +70,12 @@ var webpackConfig = {
       template: 'src/example/earth/index.html',
       inject: true,
       chunks: ['earth']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'example/flights.html',
+      template: 'src/example/flights/index.html',
+      inject: true,
+      chunks: ['flights']
     })
   ]
 };

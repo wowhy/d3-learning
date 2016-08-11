@@ -1,0 +1,46 @@
+svg {
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, .1);
+}
+
+text {
+  dominant-baseline: middle;
+  font-family: "Open Sans", sans-serif;
+  fill: #333;
+}
+
+line {
+  stroke-linecap: round;
+}
+
+.time {
+  font-size: 20px;
+}
+
+.origin-dest-line {
+  stroke: #79B5A2;
+  stroke-width: 4;
+}
+
+.origin-text,
+.dest-text {
+  font-size: 14px;
+}
+
+.origin-dot,
+.dest-dot {
+  fill: #79B5A2;
+}
+
+.flight-dot {
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.flight-line {
+  stroke-width: 2;
+}
+
+.flight text {
+  font-size: 14px;
+}
