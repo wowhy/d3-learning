@@ -1,0 +1,5 @@
+dist/
+node_modules/
+test/unit/coverage/
+node_modules/
+npm-debug.log
