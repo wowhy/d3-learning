@@ -2,12 +2,17 @@ var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var path = require('path')
 
+var modules = ['earth', 'flights', 'linechart1'],
+  entry = {
+    index: './src/index.js'
+  };
+
+modules.forEach(function(name) {
+  entry[name] = './src/example/' + name + '/index.js';
+});
+
 var webpackConfig = {
-  entry: {
-    index: './src/index.js',
-    earth: './src/example/earth/index.js',
-    flights: './src/example/flights/index.js'
-  },
+  entry: entry,
 
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -64,20 +69,15 @@ var webpackConfig = {
       template: 'src/index.html',
       inject: true,
       chunks: ['index']
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'example/earth.html',
-      template: 'src/example/earth/index.html',
-      inject: true,
-      chunks: ['earth']
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'example/flights.html',
-      template: 'src/example/flights/index.html',
-      inject: true,
-      chunks: ['flights']
     })
-  ]
+  ].concat(modules.map(function(name) {
+    return new HtmlWebpackPlugin({
+      filename: 'example/' + name + '.html',
+      template: 'src/example/' + name + '/index.html',
+      inject: true,
+      chunks: [name]
+    })
+  }))
 };
 
 module.exports = webpackConfig;
