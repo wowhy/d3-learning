@@ -3,3 +3,13 @@
   width: 500px;
   height: 250px;
 }
+
+svg > g > path {
+  fill: none;
+  stroke-width: 2px;
+  stroke: green;
+}
+
+stroke.domain {
+  color: #ccc;
+}
