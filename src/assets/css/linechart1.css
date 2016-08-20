@@ -10,6 +10,6 @@ svg > g > path {
   stroke: green;
 }
 
-stroke.domain {
-  color: #ccc;
+path.domain {
+  stroke: #333;
 }
