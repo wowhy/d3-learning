@@ -2,7 +2,7 @@ var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var path = require('path')
 
-var modules = ['earth', 'flights', 'linechart1'],
+var modules = ['earth', 'flights', 'linechart1', 'barchart1', 'barchart2'],
   entry = {
     index: './src/index.js'
   };
