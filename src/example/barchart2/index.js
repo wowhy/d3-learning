@@ -35,9 +35,16 @@ let bars = svg.selectAll('g')
 
 bars.append('rect')
   .attr('width', rectWidth)
+  .attr('height', 0)
+  .attr('y', bodyHeight)
+  .attr('fill', 'steelblue')
+  .transition()
+  .delay((d, i) => i * 200)
+  .duration(2000)
+  .ease(d3.easeBounce)
   .attr('height', d => bodyHeight - scaleY(d))
   .attr('y', d => scaleY(d))
-  .attr('fill', 'steelblue')
+
 
 bars.append('text')
   .attr('fill', '#333')
